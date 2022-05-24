@@ -1,0 +1,45 @@
+<progress>
+    通过定时器来控制
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>滚动条案例</title>
+    </head>
+    <body>
+
+
+    <progress id="pid" value="0" max="100">
+        -- 浏览器不支持这个进度条部件 --
+    </progress>
+    <button onclick="doStart()" id ="btn">下载</button>
+
+
+    <script>
+        var progress = document.getElementById("pid");
+        var time = null;
+        var m =0;
+
+
+        function running(){
+            time = setInterval(function (){
+                progress.value = ++m;
+                if(m>1){
+                    clearInterval(time);
+                    time = null;
+                    document.getElementById("btn").disabled = true;
+                    alert("下载完成");
+                    return;
+                }
+            },1000);
+        }
+
+
+        function doStart(){
+            if(!time)
+                running();
+        }
+    </script>
+    </body>
+    </html>
