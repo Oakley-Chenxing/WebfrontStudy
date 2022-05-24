@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>5秒倒计时按钮</title>
+</head>
+<body>
+<span id = "sid">5</span>
+<button onclick = "doStart()">开始</button>
+<script>
+    var sec = Number(document.getElementById("sid").innerHTML);
+    var time = null;
+
+    function  doStart(){
+        if (null == time)
+            run();
+    }
+
+    function run(){
+        sec--;
+        document.getElementById("sid").innerHTML=sec;
+        time = setTimeout("run()",1000);
+        if(!(sec>0)){
+            clearTimeout(time);
+            sec =6;
+            time = null;
+            return;
+
+        }
+
+    }
+
+</script>
+</body>
+</html>

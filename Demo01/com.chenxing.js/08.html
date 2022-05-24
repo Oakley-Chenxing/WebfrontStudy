@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS中的函数</title>
+</head>
+<body>
+    <script>
+        function  method01(){
+            alert("I am method01! Hi there!");
+        }
+        //method01();
+
+        function method02(str){
+            alert("I am mothod02! Hi there 参数是： "+ str);
+        }
+       // method02("LCX");
+        function method03(n1,n2){
+            return n1 + n2;
+        }
+        function showRes(n1,n2){
+            alert(method03(n1,n2));
+        }
+       // showRes(3,5);
+
+        // 了解即可====================非常规
+        var method04 = function(){
+            alert("我是匿名函数");
+        };
+        //method04();
+        var method05= new Function("b1","b2","b3","return b1+b2+b3");
+        //alert(method05(1,2,3));
+    </script>
+    <button onclick="method01()">调用 Method01()</button>
+    <button onclick="method02()">调用 Method02()</button>
+    <button onclick="method02('Test')">调用 Method02()</button>
+    <hr>
+    <button onclick="method02(this.innerHTML)">调用 Method02()</button>
+    <!--这一种 是调取的button的文字信息-->
+    <hr>
+    <button onclick="showRes(5,5)">调用showRes()</button>
+    <hr>
+    <button onclick="method04()">调用method04()</button>
+    <hr>
+    <button onclick="alert(method05(2,3,4))">调用method05()</button>
+</body>
+</html>

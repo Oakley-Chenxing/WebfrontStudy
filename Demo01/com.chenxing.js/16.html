@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>多选按钮</title>
+    <script>
+        function doSel(sel){
+            // 获取所有的input标签
+            let list = document.getElementsByTagName("input");
+            for (let i = 0; i < list.length; i++) {
+                switch (sel){
+                    case 1:
+                        list[i].checked = true;
+                        break;
+                        case 2:
+                            list[i].checked = false;
+                            break;
+                            case 3:
+                                list[i].checked = !list[i].checked
+                                break;
+
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<ul>
+    <li><input type = "checkbox" name = "hobby[]" value ="1">琴</li>
+    <li><input type = "checkbox" name = "hobby[]" value ="2" checked>棋</li>
+    <li><input type = "checkbox" name = "hobby[]" value ="3">书</li>
+    <li><input type = "checkbox" name = "hobby[]" value ="4">画</li>
+    <li><input type = "checkbox" name = "hobby[]" value ="5">烟</li>
+    <li><input type = "checkbox" name = "hobby[]" value ="6">酒</li>
+</ul>
+<button onclick="doSel(1)">全选</button>
+<button onclick="doSel(2)">全不选</button>
+<button onclick="doSel(3)">反选</button>
+</body>
+</html>

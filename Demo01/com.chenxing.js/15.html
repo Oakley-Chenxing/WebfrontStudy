@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>只能点击10次</title>
+</head>
+<body>
+<button onclick="clickBtn()" id="btn">点击（剩余次数10次）</button>
+
+<script>
+    let btn = document.getElementById("btn");
+    var count = 10;
+    function clickBtn(){
+        count-- ;
+        if(count > 0){
+            btn.innerHTML = "点击（剩余次数"+ count +"次)";
+        }else{
+            btn.innerHTML = "不可点击";
+            btn.disabled = true;
+        }
+    }
+</script>
+</body>
+</html>

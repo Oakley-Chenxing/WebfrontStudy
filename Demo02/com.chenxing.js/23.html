@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>通过className修改样式</title>
+</head>
+<body>
+<h3>通过className修改样式</h3>
+<hr>
+<ul>
+    <li class="cc">111111111111111111111</li>
+    <li>222222222222222222222</li>
+    <li class="cc">333333333333333333333</li>
+    <li>444444444444444444444</li>
+    <li class="cc">555555555555555555555</li>
+</ul>
+<p class="cc">ppppppppppppppppppppppp</p>
+<button onclick="setColor()">让CC变色</button>
+<script>
+    function getClassNode(cName) {
+        //获取当前页面当中的所有节点
+        var list = document.all;
+        //定义一个数组，用来存储拥有cName类名的节点
+        var arrRes = new Array();
+        //通过遍历list来判断并获取
+        for (let i = 0; i < list.length; i++) {
+            if (list[i].className == cName){
+                arrRes[arrRes.length] = list[i];
+            }
+        }
+        return arrRes;
+    }//document.getElementsByClassName("");
+    function setColor() {
+        var list = getClassNode("cc");
+        // var list = document.getElementsByClassName("cc");
+        for (let i = 0; i < list.length; i++) {
+            list[i].style.color = "red";
+        }
+    }
+</script>
+</body>
+</html>

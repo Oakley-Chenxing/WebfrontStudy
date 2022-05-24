@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>var-VS-let</title>
+</head>
+<body>
+<script>
+    let n = 27149;
+    document.write(n);
+    document.write("<hr>")
+    var m = 27149;
+    document.write(m);
+    document.write("<hr>")
+
+    for(var j = 0; j < 10 ; j++){
+        document.write(j+" ");
+    }
+    document.write("<hr>");
+    document.write(j);
+    document.write("<hr>");
+
+    for(let k = 0; k < 10 ; k++){// 通常用在循环当中
+        document.write(k+" ");
+    }
+    document.write("<hr>");
+    // document.write(k);// 不能被访问 作用域就在当前的语句块中
+    document.write("<hr>")
+
+
+    {
+        var q = 123;// 函数级作用域
+        let w = 456;// 块级的作用域
+    }
+    document.write(q);
+    document.write(w);
+</script>
+</body>
+</html>

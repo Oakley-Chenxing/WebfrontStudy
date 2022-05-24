@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>修改超链接</title>
+</head>
+<body>
+<h3>修改超链接</h3>
+<hr>
+<a href="http://www.baidu.com" id="aid">百度一下</a>
+<hr>
+<button onclick="doSwap()">换个链接</button>
+<hr>
+<script>
+  var aid = document.getElementById('aid');
+  document.write(aid.nodeName + "<br>");
+  document.write("URL : " + aid.href + "<br>");
+  document.write("链接名称 : " + aid.innerHTML + "<br>");
+
+  function doSwap(){
+    aid.href = "http://www.taobao.com";
+    aid.innerHTML = "淘你个宝";
+    aid.title = "淘你个淘你个淘了你个宝！~";
+    console.log(aid.nodeName);
+    console.log("URL : " + aid.href);
+    console.log("链接名称 : " + aid.innerHTML);
+  }
+</script>
+</body>
+</html>

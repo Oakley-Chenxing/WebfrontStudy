@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>获取表单当中的值的方式</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+<h3>获取表单中值的方式</h3>
+<hr>
+<!--这是当前页面当中的第一个表单节点-->
+<form action=""></form>
+<!--这是当前页面当中的第二个表单节点-->
+<form action="" name="myform">
+    用户名：<input type="text" id="userName" name="uname" value="Chenxing">
+</form>
+<hr>
+<button onclick="doGet()">获取表单中的内容</button>
+<script>
+    function doGet(){
+        // alert(document.getElementById('userName').value);
+        // alert(document.myform.uname.value);
+        // alert(document.forms[1].uname.value);
+        // alert(document.forms['myform'].uname.value);
+        // alert(document.forms.myform.uname.value);
+        // alert(document.forms.item(1).uname.value);
+        // alert(document['myform'].uname.value);
+        // alert(document.getElementsByTagName("input")[0].value);
+        alert(document.getElementsByTagName("input").item(0).value);
+    }
+</script>
+</body>
+</html>

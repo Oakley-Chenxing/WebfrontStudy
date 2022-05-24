@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>右键菜单</title>
+    <style>
+        #uid{
+            position:absolute;
+            margin:0px;
+            padding:0px;
+            display: none;
+        }
+        li{
+            background-color: green;
+            line-height: 25px;
+            width: 100px;
+            list-style: none;
+            margin-bottom:2px ;
+        }
+    </style>
+</head>
+<body>
+<ul id = "uid">
+    <li>哈利波特</li>
+    <li>格兰芬多</li>
+    <li>斯兰特林</li>
+    <li>拉文克劳</li>
+</ul>
+
+<script>
+    var uid = document.getElementById("uid");
+    var list = document.getElementsByTagName("li");
+
+    for (let i = 0; i < list.length; i++) {
+        // 为所有的li标签绑定点击事件
+        list[i].onclick=function(){
+            alert("您选择了"+this.innerHTML);
+        }
+        // 为所有的 li 标签绑定鼠标移入事件
+        list[i].onmouseover=function (){
+            this.style.backgroundColor="#CCC";
+        }
+        list[i].onmouseout = function (){
+            this.style.backgroundColor="blanchedalmond";
+        }
+    }
+// 如果需要跟踪鼠标轨迹的话，需要在匿名函数中传递ent
+    document.oncontextmenu=function (ent){
+        // 处理兼容性问题 逻辑或
+        var ent = ent || window.ent;
+        // 确定鼠标的位置，显示菜单ul
+        uid.style.left = ent.clientX + "px";
+        uid.style.top = ent.clientY + "px";
+        // 显示 ul
+        uid.style.display="block";
+        return false;
+// 隐藏ul
+
+        }
+    document.onclick=function (){
+        uid.style.display="none";
+    }
+</script>
+</body>
+</html>

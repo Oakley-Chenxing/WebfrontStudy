@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>页面右键菜单</title>
+  <style>
+    li{
+      background-color: #CCC;
+      line-height: 30px;
+      width: 100px;
+      list-style: none;
+      margin-top: 1px;
+    }
+    /*li:hover{*/
+    /*background-color: #BBB;*/
+    /*}*/
+    #uid{
+      display: none;
+      position: absolute;
+      margin: 0px;
+      padding: 0px;
+    }
+  </style>
+</head>
+<body>
+<h3>页面右键菜单</h3>
+<hr>
+<ul id="uid">
+  <li>复制</li>
+  <li>剪切</li>
+  <li>粘贴</li>
+  <li>属性</li>
+</ul>
+
+<script>
+  var uid = document.getElementById("uid");
+  var list = document.getElementsByTagName("li");
+
+  for (let i = 0; i < list.length; i++) {
+    list[i].onclick = function () {
+      alert("您选择了" + this.innerHTML);
+    }
+    //鼠标移入事件处理
+    list[i].onmouseover = function () {
+      this.style.backgroundColor = "#BBB";
+    }
+    //鼠标移除事件处理
+    list[i].onmouseout = function () {
+      this.style.backgroundColor = "#CCC";
+    }
+  }
+
+  document.oncontextmenu = function (ent) {
+    //在JS中非0非空都为真，如果ent有值（此时产生短路机制，逻辑或后面的代码将不会执行），说明兼容，直接将形参ent赋值给ent变量。相反如果参数ent没有值，那么就是空，此时会将逻辑或运算符后面的window.event赋值给ent变量。该语句用于处理浏览器兼容问题。
+    var ent = ent || window.event;
+    //确定ul要显示的位置
+    uid.style.left = ent.clientX + 'px';
+    uid.style.top = ent.clientY + 'px';
+    //显示ul（菜单）
+    uid.style.display = "block";
+    //在鼠标右键事件的触发函数(contextmenu)内，返回false表示禁止浏览器右键菜单的使用
+    return false;
+  }
+  //在当前页面内点击左键时触发该函数
+  document.onclick = function () {
+    //隐藏UL
+    uid.style.display = "none";
+  }
+</script>
+</body>
+</html>

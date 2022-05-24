@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>批量修改节点的样式</title>
+</head>
+<body>
+<ul>
+    <li>哈利波特</li>
+    <li>斯来特林</li>
+    <li>格兰芬多</li>
+    <li>呵护帕夫</li>
+    <li>拉文克劳</li>
+</ul>
+<script>
+    let list = document.getElementsByTagName("li");
+    document.write(list.length);
+    for (let i = 0; i < list.length; i++) {
+        // 修改颜色
+        switch (i%2){
+            case 0:list[i].style.color = "red";break;
+            case 1:list[i].style.color = "green";break;
+        }
+    }
+</script>
+</body>
+</html>

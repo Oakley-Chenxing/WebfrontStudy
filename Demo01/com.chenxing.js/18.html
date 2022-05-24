@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>猜数游戏</title>
+</head>
+<script>
+
+    var res =parseInt(Math.random()* 9 + 1);// 随机生成一个答案 区间 1-100
+    alert(res);
+    var count = 0; // 猜多少次
+    function guss(){
+        ++count;
+        var num = document.getElementById("num").value;
+        if (num>res){
+            alert("第"+count+"次"+num+"大了");
+        }else if(num<res){
+            alert("第"+count+"次"+num+"小了");
+        }else {
+            alert("第"+count+"次"+num+"对了");
+            document.getElementById("btnguss").disabled = true;
+            //document.getElementById("btnRestart").disabled = false;
+            // 输入一个数大小还是正确
+            document.getElementById("btnRestart").removeAttribute("disabled");
+        }
+    }
+    function reset(){
+        document.getElementById("num").value = 0;
+        document.getElementById("btnguss").disabled = false;
+        document.getElementById("btnRestart").disabled = true;
+        window.location.reload();
+    }
+
+</script>
+<body>
+<input type = "number" id = "num" min = "0" max = "100">
+<button onclick="guss()" id = "btnguss">我猜</button>
+<button id = "btnRestart" disabled onclick="reset()">重置</button>
+
+</body>
+</html>

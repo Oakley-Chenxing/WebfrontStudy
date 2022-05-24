@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>级联效果</title>
+  <script>
+
+  </script>
+</head>
+<body>
+<h3>级联效果</h3>
+<hr>
+<select name = "" id = "side01" onchange="method(this.value)">
+    <option selected disabled>--选择省市--</option>
+    <option value="1">北京</option>
+    <option value="2">山东</option>
+    <option value="3">辽宁</option>
+</select>
+<select name="" id="sid02" style="display: none;"></select>
+<script>
+    //测试数据
+    var list=new Array();
+    // JS 中中括号是数组，大括号是对象
+    list[1]=["东城","西城","崇文"];
+    list[2]=["济南","青岛","济宁"];
+    list[3]=["沈阳","大连","抚顺"];
+
+    function method(n){
+        var sid02=document.getElementById("sid02");
+        sid02.style.display="block";
+        sid02.length = 0; //清空列表中的所有内容
+        for (let i = 0; i < list[n].length; i++) {
+            sid02.add(new Option(list[n][i],i));
+            // sid02.add(new Option(list[n][i],i+1ß));
+        }
+    }
+</script>
+</body>
+</html>

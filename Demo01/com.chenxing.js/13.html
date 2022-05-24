@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>eval来创建对象</title>
+</head>
+<body>
+<script>
+    var stu = '{"name": "ITT", "age":19}';
+    var obj = eval("("+ stu +")");
+    document.write(obj.name+", "+obj.age+"<hr>");
+
+    var stu01 = '{"name": "oakley", "age":200}';
+    var createStu = "var obj01 = " + stu01;
+    document.write(createStu+"<hr>");
+    eval(createStu);
+    document.write(obj01.name+", "+obj01.age);
+</script>
+</body>
+</html>

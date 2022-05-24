@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>放大镜效果</title>
+</head>
+    <style>
+        #did{
+        width: 400px;
+        height: 300px;
+        border: 1px solid black;
+        position: absolute;
+        overflow: hidden;
+        /*超出界限的部分隐藏掉*/
+        display: none;
+    }
+    </style>
+<body>
+    <h3>放大镜效果</h3>
+    <hr>
+    <img src="dualipa.jpg" id="mid" width="256">
+    <div id="did">
+    <img src="dualipa.jpg">
+    </div>
+        <script>
+            var mid = document.getElementById("mid");
+            var did = document.getElementById("did");
+
+            mid.onmouseover = function (){
+                var left = this.offsetLeft + this.offsetWidth + 5 + "px";
+                var top = this.offsetTop + "px";
+                did.style.left = left;
+                did.style.top = top;
+                did.style.display="block";
+
+                this.onmousemove = function (ent) {
+                    var ent = ent||window.ent;
+                    var ll =ent.clientX - this.offsetLeft;
+                    var tt =ent.clientY - this.offsetTop;
+                    did.scrollTop = tt*4 - 150;
+                    did.scrollLeft = ll*4 - 200;
+                }
+            }
+
+            mid.onmouseout = function () {
+                did.style.display="none";
+
+            }
+
+        </script>
+</body>
+</html>
