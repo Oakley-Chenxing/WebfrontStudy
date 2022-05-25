@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>鼠标点击切换</title>
+  <style>
+    li:hover {
+      background-color: #fc0;
+    }
+  </style>
+  <script src="jquery-3.3.1.min.js"></script>
+  <script>
+    $(function () {
+      var tmp = 0;
+      var selList = "";
+
+      $("li").click(function () {
+        // 如果点击的不是当前已选中的li
+        if (selList != $(this).html()) {
+          tmp = 0;// 计数变量重置为0
+          selList = $(this).html();// 记录新的li内容
+        }
+
+        switch (tmp) {
+          case 0:
+            $(this).css("backgroundColor", "red");
+            break;
+          case 1:
+            $(this).css("backgroundColor", "green");
+            break;
+          case 2:
+            $(this).css("backgroundColor", "blue");
+            break;
+          case 3:
+            $(this).css("backgroundColor", "pink");
+            break;
+        }
+
+        tmp = ++tmp % 4;
+      });
+    });
+  </script>
+</head>
+<body>
+<h3>鼠标点击切换</h3>
+<hr>
+<ul>
+  <li>111</li>
+  <li>222</li>
+  <li>333</li>
+  <li>444</li>
+</ul>
+</body>
+</html>

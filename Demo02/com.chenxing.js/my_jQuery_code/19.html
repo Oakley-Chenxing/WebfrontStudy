@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>导航条效果</title>
+  <style>
+    div,ul,li,a{
+      margin: 0px;
+      padding: 0px;
+      border: 0px;
+    }
+
+    ul{
+      list-style: none;
+    }
+
+    #menu ul li{
+      float: left;
+      width: 150px;
+      background-color: #ddd;
+    }
+
+    #menu ul li a{
+      line-height: 40px;
+      font-size: 15px;
+      text-align: center;
+      width: 150px;
+      text-decoration: none;
+      display: block;
+    }
+
+    #menu ul li a:hover{
+      background-color: skyblue;
+      color: white;
+    }
+
+    #menu ul li ul.son li{
+      line-height: 30px;
+      border-bottom: 1px solid white;
+      text-align: center;
+    }
+
+    #menu ul li ul.son {
+      display: none;
+    }
+
+    #menu {
+      width: 900px;
+      /*border: 1px solid black;*/
+    }
+  </style>
+  <script src="jquery-3.3.1.min.js"></script>
+  <script>
+    $(function (){
+      $("#menu>ul>li").hover(function(){
+        // $(this).find("ul.son").show();
+        $("ul.son:animated").stop().slideUp(0);
+        $(this).find("ul.son").slideDown("slow");
+      },function (){
+        // $(this).find("ul.son").hide();
+        $("ul.son:animated").stop().slideUp(0);
+        $(this).find("ul.son").slideUp("slow");
+      });
+    });
+  </script>
+</head>
+<body>
+<center>
+  <h3>导航条效果</h3>
+  <hr>
+  <div id="menu">
+    <ul>
+      <li>
+        <a href="#">HTML</a>
+        <ul class="son">
+          <li>文本标签</li>
+          <li>列表标签</li>
+          <li>表格标签</li>
+          <li>表单标签</li>
+        </ul>
+      </li>
+      <li>
+        <a href="#">CSS</a>
+        <ul class="son">
+          <li>选择器</li>
+          <li>文本属性</li>
+          <li>边框属性</li>
+          <li>背景属性</li>
+        </ul>
+      </li>
+      <li>
+        <a href="#">Java</a>
+        <ul class="son">
+          <li>流程控制</li>
+          <li>封装</li>
+          <li>继承</li>
+          <li>多态</li>
+        </ul>
+      </li>
+      <li>
+        <a href="#">MySQL</a>
+        <ul class="son">
+          <li>环境安装</li>
+          <li>数据库操作</li>
+          <li>数据表操作</li>
+          <li>数据库配置</li>
+        </ul>
+      </li>
+      <li>
+        <a href="#">JavaScript</a>
+        <ul class="son">
+          <li>流程控制</li>
+          <li>语法规则</li>
+          <li>DOM编程</li>
+          <li>BOM编程</li>
+        </ul>
+      </li>
+      <li>
+        <a href="#">jQuery</a>
+        <ul class="son">
+          <li>选择器</li>
+          <li>筛选</li>
+          <li>事件</li>
+          <li>各种案例</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</center>
+</body>
+</html>

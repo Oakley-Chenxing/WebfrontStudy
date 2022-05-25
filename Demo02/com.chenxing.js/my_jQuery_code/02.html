@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>内部插入节点</title>
+  <script src="jquery-3.3.1.min.js"></script>
+  <script>
+    $(function(){
+      $("#qtj").click(function (){
+        // alert("前添加被点击了！~");
+        // 获取输入框中输入的内容
+        var name = $(":text").val();
+        // $("ul").prepend("<li>"+name+"</li>");
+        $("<li>"+name+"</li>").prependTo($("ul"));
+        $(":text").val("");
+      });
+
+      $("#htj").click(function (){
+        var name = $(":text").val();
+        // $("ul").append("<li>"+name+"</li>");
+        $("<li>"+name+"</li>").appendTo($("ul"));
+        $(":text").val("");
+      });
+    });
+  </script>
+</head>
+<body>
+<h3>内部插入</h3>
+<hr>
+<ul>
+  <li>东邪</li>
+  <li>西毒</li>
+  <li>南帝</li>
+  <li>北丐</li>
+</ul>
+姓名：<input type="text" placeholder="请输入姓名">
+<button id="qtj">前添加</button>
+<button id="htj">后添加</button>
+</body>
+</html>

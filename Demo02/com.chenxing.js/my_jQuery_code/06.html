@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>综合小案例</title>
+  <style>
+    #did {
+      width: 600px;
+      height: 300px;
+      border: 1px solid black;
+    }
+
+    img {
+      border: 2px solid black;
+      margin: 5px;
+    }
+
+    img:hover {
+      border: 3px solid red;
+    }
+
+    img.selected {
+      border: 3px solid blue;
+    }
+  </style>
+  <script src="jquery-3.3.1.min.js"></script>
+  <script>
+    $(function () {
+      // 获取选择区的img标签，并添加点击事件
+      $("#mid img").click(function () {
+        // 先删除所有的选中样式
+        $("#mid img").removeClass("selected");
+        // 给当前选中的添加选中样式
+        $(this).addClass("selected");
+      });
+
+      // 获取当前页面中的所有按钮，并添加点击事件
+      $("button").click(function () {
+        switch ($(this).html()) {
+          case "前追加":
+            $("#mid img.selected").removeClass("selected").clone().prependTo($("#did"));
+            break;
+          case "后追加":
+            $("#mid img.selected").removeClass("selected").clone().appendTo($("#did"));
+            break;
+          case "前删除":
+            $("#did img:first").remove();
+            break;
+          case "后删除":
+            $("#did img:last").remove();
+            break;
+        }
+      });
+    });
+  </script>
+</head>
+<body>
+<h3>综合小案例</h3>
+<hr>
+<div id="did"></div>
+<hr>
+<div id="mid">
+  <img src="pic/1.png" width="100px" height="100px">
+  <img src="pic/2.png" width="100px" height="100px">
+  <img src="pic/3.png" width="100px" height="100px">
+  <img src="pic/4.png" width="100px" height="100px">
+</div>
+<hr>
+<button>前追加</button>
+<button>后追加</button>
+<button>前删除</button>
+<button>后删除</button>
+</body>
+</html>

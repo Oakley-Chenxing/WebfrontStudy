@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>包裹</title>
+  <script src="jquery-3.3.1.min.js"></script>
+  <script>
+    $(function(){
+      // 将所有的 li 每个外面都包裹了一层 ol
+      // $("li").wrap("<ol></ol>");
+      // 将所有的 li 外面包裹一层 ol
+      // $("li").wrapAll("<ol></ol>");
+      // 内部包裹
+      $("li").wrapInner("<b></b>");
+    });
+  </script>
+</head>
+<body>
+<h3>包裹</h3>
+<hr>
+<li>111111</li>
+<li>222222</li>
+<li>333333</li>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>外部插入</title>
+    <script src="jquery-3.3.1.min.js"></script>
+    <script>
+        $(function (){
+            $("input").focus(function (){
+                // console.log("获取了");
+                // 移除当前焦点对象后面的span节点
+                $(this).next("span").remove();
+                // 获取当前焦点对象中自定义属性info的值
+                var info = $(this).attr("info");
+                // 将一个span标签添加到当前节点的后面，并设置CSS样式
+                $("<span>请输入正确的"+info+"</span>").insertAfter($(this)).css("color", "green");
+            }).blur(function (){
+                // console.log("丢失了");
+                $(this).next("span").remove();
+                var info = $(this).attr("info");
+                if ($(this).val().length < 1){
+                    $("<span>"+info+"不能为空</span>").insertAfter($(this)).css("color", "red");
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+<h3>外部插入</h3>
+<hr>
+姓名：<input type="text" info="姓名"> <br><br>
+密码：<input type="password" info="密码"> <br><br>
+确认：<input type="password" info="确认"> <br><br>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>事件的绑定与关闭</title>
+  <style>
+    li {
+      line-height: 30px;
+      background-color: #ccc;
+      margin-top: 3px;
+      width: 300px;
+      padding-left: 5px;
+      list-style: none;
+    }
+
+    li.selected{
+      background-color: #fc0;
+    }
+  </style>
+  <script src="jquery-3.3.1.min.js"></script>
+  <script>
+    $(function(){
+      $("button").click(function (){
+        if ("开启点击事件" == $(this).html()){
+          // 做开启的动作
+          $("li").on("click", function (){
+            $(this).addClass("selected");
+          });
+          $(this).html("关闭点击事件");
+        }else {
+          $("li").removeClass("selected").off("click");
+          $(this).html("开启点击事件");
+        }
+      });
+    });
+  </script>
+</head>
+<body>
+<h3>事件的绑定与关闭</h3>
+<hr>
+<button>开启点击事件</button>
+<hr>
+<ul>
+  <li>东邪</li>
+  <li>西毒</li>
+  <li>南帝</li>
+  <li>北丐</li>
+  <li>中神通</li>
+</ul>
+</body>
+</html>

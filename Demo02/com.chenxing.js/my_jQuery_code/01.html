@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>jQuery选择器</title>
+  <script src="jquery-3.3.1.min.js"></script>
+  <script>
+    // jQuery 入口
+    // 原生的 JS 写法
+    // window.onload = function(){
+    //     var list = document.getElementsByTagName("li");
+    //     for (let i = 0; i < list.length; i++) {
+    //         list[i].style.color = "red";
+    //     }
+    // }
+
+    $(function(){
+      // jQuery 的写法
+      // 标签选择器，选中所有的li标签，并设置color属性为blue
+      // $("li").css("color", "blue");
+      // 类选择器
+      // $(".l01").css("color", "red");
+      // id选择器
+      // $("#lid").css("color", "green");
+      // 并列选择器
+      // $("p, span, h3").css("color", "pink");
+      // 关联选择器
+      // $("ol li").css("color", "yellow");
+      // 选择ul中的子类li
+      // $("ul>li").css("color", "red");
+      // 选择紧跟在 h3 后面的 P 节点
+      // $("h3 + p").css("color", "red");
+      // 获取ul后面的第一个p
+      // $("ul + p").css("color", "red");
+      // 选中 ul 中的第一个 li 节点
+      // $("ul li:first").css("color", "red");
+      // ul 中的奇数 li
+      // $("ul li:even").css("color", "red");
+      // ul 中的偶数 li
+      // $("ul li:odd").css("color", "red");
+      // 选中ul中的第3个li
+      // $("ul li:eq(2)").css("color", "red");
+      // 选中ul中第三个之前的所有li
+      // $("ul li:lt(2)").css("color", "red");
+      // 选中ul中第三个之后的所有li
+      // $("ul li:gt(2)").css("color", "red");
+    });
+  </script>
+</head>
+<body>
+<h3 id="hid">jQuery-选择器</h3>
+<p>我紧跟在h3后面的一个段落</p>
+<hr>
+<ul>
+  <li id="lid">111</li>
+  <li class="l01">222</li>
+  <ol>
+    <li>aaa</li>
+    <li>bbb</li>
+    <li>ccc</li>
+    <li>ddd</li>
+  </ol>
+  <li>333</li>
+  <li class="l01">444</li>
+  <li>555</li>
+</ul>
+<p>我是一个段落</p>
+<span>我是一个非块状标签</span>
+</body>
+</html>

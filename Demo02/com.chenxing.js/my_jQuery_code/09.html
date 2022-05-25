@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>一次事件</title>
+  <script src="jquery-3.3.1.min.js"></script>
+  <script>
+    $(function(){
+      $("button").one("click", function (){
+        alert("点赞成功！~");
+        $(this).attr("disabled", "true");
+      });
+    });
+  </script>
+</head>
+<body>
+<h3 id="hid">一次事件</h3>
+<hr>
+<button>点赞</button>
+</body>
+</html>

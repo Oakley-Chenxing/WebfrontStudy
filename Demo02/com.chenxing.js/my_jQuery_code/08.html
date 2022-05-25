@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>列表菜单效果</title>
+  <style>
+    ul {
+      width: 200px;
+    }
+    li {
+      line-height: 30px;
+      background-color: #ccc;
+      margin-top: 10px;
+      padding-left: 10px;
+      /*list-style-position: inside;*/
+      list-style: none;
+    }
+    li:hover {
+      background-color: #fc0;
+    }
+    ul ol {
+      display: none;
+    }
+  </style>
+  <script src="jquery-3.3.1.min.js"></script>
+  <script>
+    var disOption = "";
+    $(function () {
+      $("ul > li").click(function (){
+        if (disOption != $(this).html()){
+          // 关闭所有的显示
+          $("ul ol").slideUp("slow");
+          disOption = $(this).html();
+        }
+        // $("ul ol").slideUp("slow");
+        $(this).next("ol").slideDown("slow");
+      });
+    });
+  </script>
+</head>
+<body>
+<h3>列表菜单效果</h3>
+<hr>
+<ul>
+  <li>Java</li>
+  <ol>
+    <li>封装</li>
+    <li>继承</li>
+    <li>多态</li>
+  </ol>
+  <li>HTML/CSS</li>
+  <ol>
+    <li>标签</li>
+    <li>选择器</li>
+    <li>属性</li>
+    <li>伪类选择器</li>
+  </ol>
+  <li>JavaScript/jQuery</li>
+  <ol>
+    <li>基本语法</li>
+    <li>选择器</li>
+    <li>节点操作</li>
+    <li>时间</li>
+    <li>其他处理</li>
+  </ol>
+</ul>
+</body>
+</html>

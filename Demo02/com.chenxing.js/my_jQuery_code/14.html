@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>鼠标的移入移除</title>
+  <style>
+    li{
+      width: 200px;
+    }
+    li:hover{
+      background-color: #fc0;
+    }
+    li.selected{
+      background-color: red;
+    }
+  </style>
+  <script src="jquery-1.7.1.min.js"></script>
+  <script>
+    $(function(){
+      // $("li").mouseover(function (){
+      //     $("span").html($(this).html());
+      // }).mouseout(function(){
+      //     $("span").html("-- 没有选中任何人 --");
+      // }).click(function(){
+      //     $(this).addClass("selected");
+      //     $("li").off("click").off("mouseover").off("mouseout");
+      // });
+
+      $("li").click(function(){
+        $(this).addClass("selected");
+        $("li").off("click").off("hover");
+      }).hover(function(){
+        $("span").html($(this).html());
+      },function (){
+        $("span").html("-- 没有选中任何人 --");
+      });
+    });
+  </script>
+</head>
+<body>
+<h3>鼠标的移入移除</h3>
+<hr>
+<ul>
+  <li>东邪</li>
+  <li>西毒</li>
+  <li>南帝</li>
+  <li>北丐</li>
+</ul>
+<hr>
+<span> --- </span>
+</body>
+</html>

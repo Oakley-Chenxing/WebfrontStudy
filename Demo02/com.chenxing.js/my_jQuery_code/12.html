@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>事件的触发</title>
+  <script src="jquery-3.3.1.min.js"></script>
+  <script>
+    $(function(){
+      $("button").click(function (){
+        $("input[type=file]").trigger("click");
+      });
+    });
+  </script>
+</head>
+<body>
+<h3>事件的触发</h3>
+<hr>
+<input type="file">
+上传文件: <button>本地上传</button>
+</body>
+</html>

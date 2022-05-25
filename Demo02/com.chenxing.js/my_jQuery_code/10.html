@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>点赞/撤赞</title>
+    <script src="jquery-3.3.1.min.js"></script>
+    <style>
+        #did {
+            width: 55px;
+            height: 55px;
+            /*border: 1px solid black;*/
+            margin-bottom: 3px;
+        }
+    </style>
+    <script>
+        $(function(){
+            var sw = 0;
+            $("button").click(function() {
+                sw++;
+                if (sw %= 2){
+                    // $("#did").html("已点赞");
+                    $("img").fadeIn();
+                    $(this).html("撤赞");
+                }else {
+                    // $("#did").html("未点赞");
+                    $("img").fadeOut();
+                    $(this).html("点赞");
+                }
+                // $("img").fadeToggle();
+            });
+        });
+    </script>
+</head>
+<body>
+<h3 id="hid">点赞/撤赞</h3>
+<hr>
+<div id="did">
+    <img src="./pic/zan.jpeg" style="display: none" height="50px">
+</div>
+<button>点赞</button>
+</body>
+</html>

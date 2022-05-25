@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>节点筛选</title>
+  <script src="jquery-3.3.1.min.js"></script>
+  <script>
+    $(function (){
+      // 选中所有的 p 标签
+      // $("p").css("color", "red");
+      // 选择第一个 P 标签
+      // $("p:first").css("color", "red");
+      // $("p").first().css("color", "red");
+      // 让 1,3,5,7,9 变成红色,需要选中偶数索引
+      // $("p:even").css("color", "red");
+      // $("p").even().css("color", "red");
+      $("p").each(function(){
+        switch ($(this).html()){
+          case "1":case "3":case "5":case "7":case "9":
+            $(this).css("color", "red");
+            break;
+        }
+      });
+    });
+  </script>
+</head>
+<body>
+<h3>节点筛选</h3>
+<hr>
+<p>1</p>
+<p>2</p>
+<p>3</p>
+<p>4</p>
+<p>5</p>
+<p>6</p>
+<p>7</p>
+<p>8</p>
+<p>9</p>
+</body>
+</html>

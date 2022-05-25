@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>图片轮播</title>
+  <script src="jquery-3.3.1.min.js"></script>
+  <script>
+    $(function(){
+      var index = 1; // 要显示的图
+      var time = null; // 定时器对象
+
+      function running(){
+        time = setInterval(function (){
+          $(".small").each(function (){
+            if ($(this).attr("src") == "pic/9" + index + ".jpeg"){
+              // 去掉图片上所有的边框
+              $(".small").css("borderWidth", "0px");
+              // 为当前的图片去添加边框
+              $(this).css("border", "2px solid blue");
+              // 将原来的图隐藏掉
+              $(".big").hide();
+              // 再改变大图中显示的图片，然后使用淡入效果显示出来
+              $(".big").attr("src", $(this).attr("src")).fadeIn("slow");
+            }
+          });
+          index = index % 4 + 1;
+        }, 2000);
+      }
+      // 调用轮播效果
+      running();
+
+      // 鼠标移入大图的操作
+      $(".big").hover(function (){
+        clearInterval(time);
+        time = null;
+      },function (){
+        running();
+      });
+
+      // 鼠标移入到小图
+      $(".small").hover(function (){
+        clearInterval(time);
+        time = null;
+        $(".big").attr("src", $(this).attr("src")).fadeIn("slow");
+      }, function (){
+        running();
+      });
+    });
+  </script>
+</head>
+<body>
+<h3>图片轮播</h3>
+<hr>
+<img src="pic/91.jpeg" width="400px" class="big">
+<hr>
+<img src="pic/91.jpeg" width="150px" class="small">
+<img src="pic/92.jpeg" width="150px" class="small">
+<img src="pic/93.jpeg" width="150px" class="small">
+<img src="pic/94.jpeg" width="150px" class="small">
+</body>
+</html>
