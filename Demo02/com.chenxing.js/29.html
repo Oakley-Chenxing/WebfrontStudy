@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>表格操作</title>
+</head>
+<body>
+<h3>表格的操作</h3>
+<hr>
+<table id="tid" width="500px" border="1px">
+  <tr>
+    <th>学号</th>
+    <th>姓名</th>
+    <th>性别</th>
+    <th>年龄</th>
+    <th>操作</th>
+  </tr>
+  <tr>
+    <td>1001</td>
+    <td>张三</td>
+    <td>男</td>
+    <td>20</td>
+    <td><button onclick="doDel(this)">删除</button></td>
+  </tr>
+  <tr>
+    <td>1002</td>
+    <td>李四</td>
+    <td>男</td>
+    <td>19</td>
+    <td><button onclick="doDel(this)">删除</button></td>
+  </tr>
+  <tr>
+    <td>1003</td>
+    <td>王五</td>
+    <td>女</td>
+    <td>18</td>
+    <td><button onclick="doDel(this)">删除</button></td>
+  </tr>
+  <tr>
+    <td>1004</td>
+    <td>赵六</td>
+    <td>男</td>
+    <td>22</td>
+    <td><button onclick="doDel(this)">删除</button></td>
+  </tr>
+</table>
+<hr>
+<form action="#" name="myform" onsubmit="return doAdd()">
+  学号：<input type="text" name="sno"><br><br>
+  姓名：<input type="text" name="name"><br><br>
+  性别：<input type="text" name="sex"><br><br>
+  年龄：<input type="text" name="age"><br><br>
+  <input type="submit" value="添加">
+</form>
+<script>
+  //执行删除操作
+  function doDel(tmp){
+    //获取 按钮 的 父节点 的 父节点 ，那么就是当前按钮所在的行节点及 tr 节点
+    var tr = tmp.parentNode.parentNode;
+    //删除表格并杀出当前行
+    document.getElementById('tid').deleteRow(tr.rowIndex);
+  }
+  //执行添加操作
+  function doAdd(){
+    //获取表单信息
+    var sno = document.myform.sno.value;
+    var name = document.myform.name.value;
+    var sex = document.myform.sex.value;
+    var age = document.myform.age.value;
+    //获取表格，并添加一行
+    var tab = document.getElementById('tid');
+    var row = tab.insertRow();
+    //在行中添加单元格
+    row.insertCell(0).innerHTML = sno;
+    row.insertCell(1).innerHTML = name;
+    row.insertCell(2).innerHTML = sex;
+    row.insertCell(3).innerHTML = age;
+    row.insertCell(4).innerHTML = '<button onclick="doDel()">删除</button>';
+    //添加信息过后，将表单内容清空
+    document.myform.reset();
+    //阻止表单的提交跳转
+    return false;
+  }
+</script>
+</body>
+</html>

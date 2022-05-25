@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>移动节点案例</title>
+  <style>
+    select{
+      width: 100px;
+      height: 200px;
+      border: 1px solid black;
+      float: left;
+    }
+    div{
+      width: 100px;
+      height: 200px;
+      float: left;
+      text-align: center;
+      padding-top: 30px;
+    }
+  </style>
+</head>
+<body>
+<h3>移动节点案例</h3>
+<hr>
+<select id="sid1" size="10" multiple>
+  <option value="0">张三</option>
+  <option value="1">李四</option>
+  <option value="2">王五</option>
+  <option value="3">赵六</option>
+  <option value="4">田七</option>
+  <option value="5">马八</option>
+  <option value="6">穷九</option>
+  <option value="7">大傻</option>
+  <option value="8">二楞</option>
+  <option value="9">十不全</option>
+</select>
+<div>
+  <button onclick="doMove('sid1', 'sid2')"> >>> </button>
+  <br><br><br><br><br>
+  <button onclick="doMove('sid2', 'sid1')"> <<< </button>
+</div>
+<select id="sid2" size="10" multiple>
+</select>
+
+<script>
+  function doMove(s1, s2) {
+    var select1 = document.getElementById(s1);
+    var select2 = document.getElementById(s2);
+
+    var list = select1.options;
+
+    for (let i = 0; i < list.length; i++) {
+      if (list[i].selected){
+        list[i].selected = false;//清除被选中的状态
+        var obj = list[i];//先将要删除的节点存到一个临时对象当中
+        select1.remove(i);//删除选中的节点
+        select2.add(obj);//将刚才存储的节点添加到新的select当中
+        i--;//为了多选操作做的位置处理
+      }
+    }
+  }
+</script>
+</body>
+</html>

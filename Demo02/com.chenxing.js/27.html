@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>表单操作</title>
+</head>
+<body>
+<h3>表单操作</h3>
+<hr>
+<form action="XXX.html" id="fid" method="get" onsubmit="return doGet(this)">
+  姓名：<input type="text" name="name"><br>
+  年龄：<input type="number" name="age">
+  <span id="sAge" style="color:red;"></span>
+  <br>
+  <input type="submit">
+</form>
+<button onclick="doSubmit()">提交表单到YYY</button>
+<script>
+  function doSubmit(){
+    var fid = document.getElementById("fid");
+    fid.action = "YYY.html";
+    fid.method = "post";
+    if (fid.age.value > 100 || fid.age.value < 0){
+      document.getElementById('sAge').innerHTML = "年龄输入非法请重新输入";
+    }else{
+      fid.submit();
+    }
+  }
+  function doGet(myform){
+    if (myform.age.value > 100 || myform.age.value < 0){
+      document.getElementById('sAge').innerHTML = "年龄输入非法请重新输入";
+      return false;
+    }
+    return true;
+  }
+</script>
+</body>
+</html>

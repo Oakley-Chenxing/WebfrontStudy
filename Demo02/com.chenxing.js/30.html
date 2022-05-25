@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件冒泡</title>
+    <style>
+        #mid{
+            width: 300px;
+            height: 300px;
+            border: 1px solid black;
+            background-color: deeppink;
+        }
+        #sid{
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+            background-color: darkblue;
+        }
+    </style>
+</head>
+<body>
+<h3>时间冒泡</h3>
+<hr>
+<div id="mid">
+    <div id="sid"></div>
+</div>
+<script>
+    var mid = document.getElementById("mid");
+    var sid = document.getElementById("sid");
+
+    mid.onclick = function () {
+        alert("大的DIV被点击了！~");
+    };
+    sid.onclick = function (ent) {
+        var event = ent || window.event;
+        alert("小的DIV被点击了！~");
+        // event.stopPropagation();
+        event.cancelBubble = true;
+    };
+</script>
+</body>
+</html>

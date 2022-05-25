@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>删除DOM节点</title>
+</head>
+<body>
+<h3>删除DOM节点</h3>
+<hr>
+<select name="city" id="cid" multiple size="8">
+    <option value="1">北京</option>
+    <option value="2">上海</option>
+    <option value="3">广州</option>
+    <option value="4">深圳</option>
+    <option value="5">苏州</option>
+    <option value="6">杭州</option>
+    <option value="7">天津</option>
+    <option value="8">沈阳</option>
+</select>
+<button onclick="doDel()">删除</button>
+<script>
+    function doDel() {
+        var select = document.getElementById('cid');
+        // 获取到select中所有的option节点
+        var options = select.options;
+        // var options = document.getElementById('cid').options;
+        for (let i = 0; i < options.length; i++) {
+            if (options[i].selected){
+                select.remove(i);
+                i--;//在循环体当中--，然后在for表达式3中++，相当于i的值没有发生变化
+            }
+        }
+    }
+</script>
+</body>
+</html>
