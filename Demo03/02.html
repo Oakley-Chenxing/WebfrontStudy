@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<!--要使用bootsrap必须是html5的文档类型-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>栅格系统</title>
+  <!--设置移动设备优先-支持响应式布局-->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!--引入bootstrap的外部css样式文件-->
+  <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
+  <!--在引入bootstrap的js外部文件之前一定要记得先引入对应的jQuery文件作为支持-->
+  <script type="text/javascript" src="jQuery.js"></script>
+  <!--引入bootstrap的JS外部文件-->
+  <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+  <style>
+    div{
+      border: 1px solid black;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <div class="row">
+    <div class="col-md-1">.col-md-1</div>
+    <div class="col-md-1">.col-md-1</div>
+    <div class="col-md-1">.col-md-1</div>
+    <div class="col-md-1">.col-md-1</div>
+    <div class="col-md-1">.col-md-1</div>
+    <div class="col-md-1">.col-md-1</div>
+    <div class="col-md-1">.col-md-1</div>
+    <div class="col-md-1">.col-md-1</div>
+    <div class="col-md-1">.col-md-1</div>
+    <div class="col-md-1">.col-md-1</div>
+    <div class="col-md-1">.col-md-1</div>
+    <div class="col-md-1">.col-md-1</div>
+  </div>
+  <div class="row">
+    <!--col-md-* 星号表示的是当前div占用的布局宽度-->
+    <div class="col-md-3">.col-md-3</div>
+    <div class="col-md-2">.col-md-2</div>
+    <div class="col-md-4">.col-md-4</div>
+    <div class="col-md-3">.col-md-3</div>
+  </div>
+  <div class="row">
+    <!--offset后面跟的数字是向后的偏移量-->
+    <div class="col-md-3 col-md-offset-2">.col-md-3</div>
+    <div class="col-md-2 col-md-offset-5">.col-md-2</div>
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<!--要使用bootsrap必须是html5的文档类型-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>栅格系统响应式布局</title>
+  <!--设置移动设备优先-支持响应式布局-->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!--引入bootstrap的外部css样式文件-->
+  <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
+  <!--在引入bootstrap的js外部文件之前一定要记得先引入对应的jQuery文件作为支持-->
+  <script type="text/javascript" src="./bootstrap/js/jQuery.js"></script>
+  <!--引入bootstrap的JS外部文件-->
+  <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+  <style>
+    div{
+      border: 1px solid black;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <!--
+  超大屏幕的   一行显示 6个    2个格子
+  大屏幕的     一行显示 4个    3个格子
+  平板的      一行显示 3个     4个格子
+  小屏幕的     一行显示 2个    6个格子
+
+  .col-xs-	.col-sm-	.col-md-	.col-lg-
+
+  大家注意的是在设置响应式布局的时候，div中要计算的是格子的宽度，并不是要显示的个数，要显示的个数应该以偶节点的个数来确定
+  -->
+  <div class="row">
+    <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+      <img src="../images/1.jpg" class="img-responsive img-rounded">
+    </div>
+    <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+      <img src="../images/1.jpg" class="img-responsive img-rounded">
+    </div>
+    <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+      <img src="../images/1.jpg" class="img-responsive img-rounded">
+    </div>
+    <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+      <img src="../images/1.jpg" class="img-responsive img-rounded">
+    </div>
+    <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+      <img src="../images/1.jpg" class="img-responsive img-rounded">
+    </div>
+    <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+      <img src="../images/1.jpg" class="img-responsive img-rounded">
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

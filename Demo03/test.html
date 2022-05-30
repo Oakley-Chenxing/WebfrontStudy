@@ -1,21 +1,27 @@
-<!doctype html>
-<html lang="zh-CN">
+<!DOCTYPE html>
+<!--要使用bootsrap必须是html5的文档类型-->
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="UTF-8">
+    <title>表单的样式</title>
+    <!--设置移动设备优先-支持响应式布局-->
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
-    <title>Bootstrap模板</title>
-
-    <!-- Bootstrap -->
-    <link rel="stylesheet" href="./bootstrap/css/bootstrap-theme.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
-    <!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
-    <script src="./bootstrap/js/jQuery.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
-    <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
-    <script src="./bootstrap/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
-
+    <!--引入bootstrap的外部css样式文件-->
+    <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
+    <!--在引入bootstrap的js外部文件之前一定要记得先引入对应的jQuery文件作为支持-->
+    <script type="text/javascript" src="./bootstrap/js/jQuery.js"></script>
+    <!--引入bootstrap的JS外部文件-->
+    <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+    <style>
+        div{
+            border: solid 1px black;
+        }
+    </style>
 </head>
 <body>
-<h1>你好，世界！</h1>
+<div class="container">
+    <h1>Hello</h1>
+</div>
+
 </body>
 </html>
