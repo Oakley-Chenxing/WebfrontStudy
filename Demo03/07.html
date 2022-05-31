@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<!--要使用bootsrap必须是html5的文档类型-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>表单</title>
+  <!--设置移动设备优先-支持响应式布局-->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!--引入bootstrap的外部css样式文件-->
+  <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
+  <!--在引入bootstrap的js外部文件之前一定要记得先引入对应的jQuery文件作为支持-->
+  <script src="./bootstrap/js/jQuery.js"></script>
+  <!--引入bootstrap的JS外部文件-->
+  <script src="bootstrap/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container">
+  <h3>表单的排版</h3>
+  <hr>
+  <!--如果在表单中想要使用栅格布局那么表单中必须含有form-horizontal类-->
+  <form class="form-horizontal">
+    <!--form-group表示为一个表单录入信息划定一个分组-->
+    <div class="form-group">
+      <!--control-label用于对label样式的优化-->
+      <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+      <div class="col-sm-6">
+        <!--form-control对表单输入框做样式的优化-->
+        <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
+      <div class="col-sm-6">
+        <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+      </div>
+    </div>
+    <div class="form-group">
+      <!--col-sm-offset-2表示栅格系统向后偏移两位-->
+      <div class="col-sm-offset-2 col-sm-10">
+        <div class="checkbox">
+          <label>
+            <input type="checkbox"> Remember me
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-10">
+        <button type="submit" class="btn btn-success">Sign in</button>
+      </div>
+    </div>
+  </form>
+</div>
+</body>
+</html>

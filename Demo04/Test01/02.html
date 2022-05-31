@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>正则表单验证</title>
+    <script>
+        function doCheck(str){
+            var patt =/^[a-z0-9]+([._\\-]*[a-z0-9])*@([a-z0-9]+[-a-z0-9]*[a-z0-9]+.)/;
+
+            if(!patt.test(str)){
+                document.getElementById("sid").innerHTML="输入的内容不合法";
+            }else{
+                document.getElementById("sid").innerHTML="";
+            }
+        }
+    </script>
+</head>
+<body>
+<input type="text" placeholder="请输入" onblur="doCheck(this.value)">
+<span id = "sid"></span>
+</body>
+</html>
